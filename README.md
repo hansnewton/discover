@@ -28,13 +28,14 @@ The build is minified and the filenames include the hashes.<br />
 Strategy 1:
 1 - Run `yarn`;
 2 - Run `yarn build` and them your app is ready to be deployed!
-3 - Copy build folder for server and point for server host to `build/index.html`
+3 - Copy build folder for server and point server host to `build/index.html`
 
-Strategy 1:
+Strategy 2:
+0 - Copy this repo for the server and change directory `discover/`;
 1 - Run `yarn`;
-2 - Run `yarn build` and them your app is ready to be deployed!
-4 - Run `yarn global add serve`
-5 - Run `serve -s build`
+2 - Run `yarn build` and them your app is ready to be deployed!;
+4 - Run `yarn global add serve`;
+5 - Run `serve -s build`;
 
 ## Technologies used
 
