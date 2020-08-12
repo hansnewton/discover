@@ -30,6 +30,9 @@ Copy build folder for server and point host url.
 
 ## Technologies used
 
+- React, HTML, Javascript and CSS
+
+React libraries:
 - axios
 - bootstrap
 - font awesome icons
