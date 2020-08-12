@@ -26,11 +26,18 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.<br />
 
 Strategy 1:
+- 0 Configure buildpack https://github.com/mars/create-react-app-buildpack.git
+- 1 Run `heroku login`;
+- 2 Run `git add .`
+- 3 Run `git commit -am "heroku commit"`
+- 4 Run `git push heroku master`
+
+Strategy 2:
 - 1 Run `yarn`;
 - 2 Run `yarn build` and them your app is ready to be deployed!
 - 3 Copy build folder for server and point server host to `build/index.html`
 
-Strategy 2:
+Strategy 3:
 - 0 Copy this repo for the server and change directory `cd discover/`;
 - 1 Run `yarn`;
 - 2 Run `yarn build` and them your app is ready to be deployed!;
