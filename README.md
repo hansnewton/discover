@@ -24,9 +24,17 @@ Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-Copy build folder for server and point host url.
+Strategy 1:
+1 - Run `yarn`;
+2 - Run `yarn build` and them your app is ready to be deployed!
+3 - Copy build folder for server and point for server host to `build/index.html`
+
+Strategy 1:
+1 - Run `yarn`;
+2 - Run `yarn build` and them your app is ready to be deployed!
+4 - Run `yarn global add serve`
+5 - Run `serve -s build`
 
 ## Technologies used
 
