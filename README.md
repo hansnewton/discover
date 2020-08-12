@@ -31,7 +31,7 @@ Strategy 1:
 - 3 Copy build folder for server and point server host to `build/index.html`
 
 Strategy 2:
-- 0 Copy this repo for the server and change directory `discover/`;
+- 0 Copy this repo for the server and change directory `cd discover/`;
 - 1 Run `yarn`;
 - 2 Run `yarn build` and them your app is ready to be deployed!;
 - 3 Run `yarn global add serve`;
