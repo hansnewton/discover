@@ -25,36 +25,38 @@ export default function StarWars(){
         filmContext: [filmList, setFilmList],
         planetContext: [planetList, setPlanetList]
       }}>
-      <Container>
-        <header>
-          <h1>
-            <Link to='/'>
-              Discover
-            </Link>
-          </h1>
-          <h3>Star Wars</h3>
-        </header>
-        <main>
-          <Tabs defaultActiveKey="people">
-            <Tab eventKey="people" title="People">
-              <PeopleTabContent/>  
-            </Tab>
-            <Tab eventKey="films" title="Films">
-              <FilmTabContent/>
-            </Tab>
-            <Tab eventKey="planets" title="Planets">
-              <PlanetTabContent/>
-            </Tab>
-            <Tab eventKey="favorites" title="Favorites">
-              <FavoriteStarWarsTabContent/>
-            </Tab>
-          </Tabs>
-        </main>
-        <footer>
-          <hr/>
-          2020 - All rights reserved
-        </footer>
-      </Container>
+      <div id="star-wars">
+        <Container>
+          <header>
+            <h1>
+              <Link to='/'>
+                Discover
+              </Link>
+            </h1>
+            <h3>Star Wars</h3>
+          </header>
+          <main>
+            <Tabs defaultActiveKey="people">
+              <Tab eventKey="people" title="People">
+                <PeopleTabContent/>  
+              </Tab>
+              <Tab eventKey="films" title="Films">
+                <FilmTabContent/>
+              </Tab>
+              <Tab eventKey="planets" title="Planets">
+                <PlanetTabContent/>
+              </Tab>
+              <Tab eventKey="favorites" title="Favorites">
+                <FavoriteStarWarsTabContent/>
+              </Tab>
+            </Tabs>
+          </main>
+          <footer>
+            <hr/>
+            2020 - All rights reserved
+          </footer>
+        </Container>
+      </div>
     </StarWarsContext.Provider>
   );
 }
