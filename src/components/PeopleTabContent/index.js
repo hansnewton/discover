@@ -17,19 +17,18 @@ export default function PeopleTabContent() {
   const [peopleList, setPeopleList] = peopleContext;
   
   useEffect(() => {
+    async function loadPeople(){
+      const res = await starWarsApi.get('/people');
+      const data = res.data.results;
+  
+      setPeopleList(
+        data.map(people => {
+          return {...people, favorite:false};  
+        })
+      )    
+    }
     loadPeople();
-  }, []);
-
-  async function loadPeople(){
-    const res = await starWarsApi.get('/people');
-    const data = res.data.results;
-
-    setPeopleList(
-      data.map(people => {
-        return {...people, favorite:false};  
-      })
-    )    
-  }
+  }, [setPeopleList]);
 
   function favoritePeople(selected) {
     setPeopleList(

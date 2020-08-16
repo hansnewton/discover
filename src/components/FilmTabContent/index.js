@@ -20,19 +20,21 @@ export default function FilmTabContent() {
   const [filmList, setFilmList] = filmContext;
   
   useEffect(() => {
+    async function loadFilms(){
+      const res = await starWarsApi.get('/films');
+      const data = res.data.results;
+  
+      setFilmList(
+        data.map(film => {
+          return {...film, favorite:false};  
+        })
+      )    
+    }
+
     loadFilms();
-  }, []);
+  }, [setFilmList]);
 
-  async function loadFilms(){
-    const res = await starWarsApi.get('/films');
-    const data = res.data.results;
-
-    setFilmList(
-      data.map(film => {
-        return {...film, favorite:false};  
-      })
-    )    
-  }
+  
 
   function favoriteFilm(selected) {
     setFilmList(

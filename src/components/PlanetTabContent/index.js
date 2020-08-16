@@ -19,19 +19,21 @@ export default function PelanetTabContent() {
   const [planetList, setPlanetList] = planetContext;
   
   useEffect(() => {
+    async function loadPlanets(){
+      const res = await starWarsApi.get('/planets');
+      const data = res.data.results;
+  
+      setPlanetList(
+        data.map(planet => {
+          return {...planet, favorite:false};  
+        })
+      )    
+    }
+    
     loadPlanets();
-  }, []);
+  }, [setPlanetList]);
 
-  async function loadPlanets(){
-    const res = await starWarsApi.get('/planets');
-    const data = res.data.results;
-
-    setPlanetList(
-      data.map(planet => {
-        return {...planet, favorite:false};  
-      })
-    )    
-  }
+  
 
   function favoritePlanet(selected) {
     setPlanetList(

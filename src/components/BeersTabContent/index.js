@@ -21,19 +21,19 @@ export default function BeersTabContent(){
   const [beersList, setBeersList] = useContext(BrewerContext);
   
   useEffect(()=>{
-    loadBeers();
-  }, []);
+    async function loadBeers(){
+      const res = await beersApi.get('/beers');
+      const data = res.data;
+      
+      setBeersList(
+        data.map(beer => {
+          return {...beer, favorite:false};  
+        })
+      )
+    }
 
-  async function loadBeers(){
-    const res = await beersApi.get('/beers');
-    const data = res.data;
-    
-    setBeersList(
-      data.map(beer => {
-        return {...beer, favorite:false};  
-      })
-    )
-  }
+    loadBeers();
+  }, [setBeersList]);
 
   function favoriteBeer(selected) {
     setBeersList(
